@@ -87,9 +87,13 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc)
 sudo pip3 install keyboard
 
 ### Install PyThorch(Version 1.0.0) and Torchvision
+```
 wget https://nvidia.box.com/shared/static/2ls48wc6h0kp1e58fjk21zast96lpt70.whl -O torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl \
-sudo pip3 install numpy torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl 
+sudo pip3 install numpy torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl
+```
 
 ### Install Context Encoding (optinal) for Semantic Segmentation
+```
 git clone https://github.com/zhanghang1989/PyTorch-Encoding.git \
 python3 setup.py install
+```
