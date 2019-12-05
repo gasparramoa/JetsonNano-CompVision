@@ -71,16 +71,16 @@ sudo make install-pip-package (wheel)
 
 ### Install Python wrapper for realsense (pyrealsense2)
 ```
-sudo apt-get dist-upgrade \
-sudo apt-get install python3 python3-dev \
-git clone https://github.com/IntelRealSense/librealsense.git \
-cd librealsense \
-mkdir build \
-cd build \
-cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true \
-make -j4 \
-sudo make install \
-export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc)
+sudo apt-get dist-upgrade
+sudo apt-get install python3 python3-dev 
+git clone https://github.com/IntelRealSense/librealsense.git 
+cd librealsense 
+mkdir build 
+cd build 
+cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true 
+make -j4 
+sudo make install 
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc file)
 ```
 
 ### Install keyboard library
@@ -88,12 +88,26 @@ sudo pip3 install keyboard
 
 ### Install PyThorch(Version 1.0.0) and Torchvision
 ```
-wget https://nvidia.box.com/shared/static/2ls48wc6h0kp1e58fjk21zast96lpt70.whl -O torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl \
+wget https://nvidia.box.com/shared/static/2ls48wc6h0kp1e58fjk21zast96lpt70.whl -O torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl 
 sudo pip3 install numpy torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl
+```
+
+### Install Terminator (Terminal with less consuming memory - RAM)
+```
+sudo apt install terminator
 ```
 
 ### Install Context Encoding (optinal) for Semantic Segmentation
 ```
-git clone https://github.com/zhanghang1989/PyTorch-Encoding.git \
+git clone https://github.com/zhanghang1989/PyTorch-Encoding.git 
 python3 setup.py install
+sudo apt-get install ninja-build
 ```
+Add the following lines to the ``` .bashrc ```file \
+My ninja directory is ``` \usr\bin\ninja ``` and cuda directory is ``` \usr\local\cuda ``` but it can depend.
+```
+export PATH=<your-ninja-directory>:${PATH}
+export CUDA_HOME=<your-cuda-directory>
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
+```
+
