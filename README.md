@@ -70,6 +70,7 @@ sudo make -j4 \
 sudo make install-pip-package (wheel)
 
 ### Install Python wrapper for realsense (pyrealsense2)
+```
 sudo apt-get dist-upgrade \
 sudo apt-get install python3 python3-dev \
 git clone https://github.com/IntelRealSense/librealsense.git \
@@ -79,7 +80,8 @@ cd build \
 cmake ../ -DBUILD_PYTHON_BINDINGS:bool=true \
 make -j4 \
 sudo make install \
-export PYTHONPATH=$PYTHONPATH:/usr/local/lib
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc)
+```
 
 ### Install keyboard library
 sudo pip3 install keyboard
