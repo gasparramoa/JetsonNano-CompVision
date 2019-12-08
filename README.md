@@ -7,32 +7,38 @@ At least a 32 Gb SD-Card \
 USB fan to reduce CPU Tempeature to avoid CPU throttle.
 
 
-### Increase Swap memory (4 Gb)
-sudo fallocate -l 4G /swapfile\
-sudo chmod 600 /swapfile\
-sudo mkswap /swapfile\
-sudo swapon /swapfile\
-sudo swapon --show\
-sudo cp /etc/fstab /etc/fstab.bak\
+### Increase Swap memory (4 Gb at least recommended)
+```
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
 
 ### Dependencies of deep learning frameworks and libraries
-sudo apt install -y git \
-sudo apt install -y cmake \
-sudo apt install -y libatlas-base-dev \
-sudo apt install -y gfortran \
-sudo apt install -y python3-dev \
-sudo apt install -y python3-pip \
-sudo apt install -y libhdf5-serial-dev \
+```
+sudo apt install -y git
+sudo apt install -y cmake
+sudo apt install -y libatlas-base-dev
+sudo apt install -y gfortran
+sudo apt install -y python3-dev
+sudo apt install -y python3-pip
+sudo apt install -y libhdf5-serial-dev
 sudo apt install -y hdf5-tools 
+```
 
 ### Install mlocate library for (updatedb and locate) work
-sudo apt install mlocate
+``` sudo apt install mlocate ```
 
 ### Install setuptools numpy and matplotlib
-pip3 install numpy\
-pip3 install -U pip setuptools\
+```
+pip3 install numpy
+pip3 install -U pip setuptools
 pip3 install matplotlib
+```
 
 ### Realsense tools for 3D Realsense Camera
 sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE\
@@ -87,6 +93,7 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc file)
 sudo pip3 install keyboard
 
 ### Install PyThorch(Version 1.0.0) and Torchvision
+# ACRESCENTAR TORCHVISION
 ```
 wget https://nvidia.box.com/shared/static/2ls48wc6h0kp1e58fjk21zast96lpt70.whl -O torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl 
 sudo pip3 install numpy torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl
@@ -97,11 +104,10 @@ sudo pip3 install numpy torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl
 sudo apt install terminator
 ```
 
-### Install Context Encoding (optinal) for Semantic Segmentation
+### Install Context Encoding (optional) for Semantic Segmentation (PyTorch)
 ```
-git clone https://github.com/zhanghang1989/PyTorch-Encoding.git 
-python3 setup.py install
 sudo apt-get install ninja-build
+python3 setup.py install
 ```
 Add the following lines to the ``` .bashrc ```file \
 My ninja directory is ``` \usr\bin\ninja ``` and cuda directory is ``` \usr\local\cuda ``` but it can depend.
@@ -109,5 +115,15 @@ My ninja directory is ``` \usr\bin\ninja ``` and cuda directory is ``` \usr\loca
 export PATH=<your-ninja-directory>:${PATH}
 export CUDA_HOME=<your-cuda-directory>
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
+```
+
+### Install PointNet (optional) for 3D Object Classification (PyTorch)
+```
+git clone https://github.com/fxia22/pointnet.pytorch.git
+cd pointnet.pytorch
+pip install -e .
+cd script
+bash build.sh
+bash download.sh 
 ```
 
