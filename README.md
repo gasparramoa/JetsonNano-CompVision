@@ -41,39 +41,49 @@ pip3 install matplotlib
 ```
 
 ### Realsense tools for 3D Realsense Camera
-sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE\
+```
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
 sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u\
-sudo apt-get update\
-sudo apt-get install librealsense2-dkms\
-sudo apt-get install librealsense2-utils \
-sudo apt-get install librealsense2-dev \
+sudo apt-get update
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+sudo apt-get install librealsense2-dev
 sudo apt-get install librealsense2-dbg 
+```
 
-### Test Realsense viewer
-realsense-viewer 
+Test it by typping: 
+```realsense-viewer```
 
 ### python-dev and htop (optional)
-sudo pip3 install python-dev-tools \
-sudo apt-get install python3.6-devel \
-sudo apt update && sudo apt upgrade \
+```
+sudo pip3 install python-dev-tools 
+sudo apt-get install python3.6-devel 
+sudo apt update && sudo apt upgrade 
 sudo apt install htop
+```
 
 ### Install OpenCV
-bash install_opencv4.0.0_Nano.sh $HOME/.local \
-wget https://raw.githubusercontent.com/AastaNV/JEP/master/script/install_opencv4.0.0_Nano.sh \
-mkdir opencv \
-git clone https://github.com/AastaNV/JEP.git \
-cd JEP/script/ \
+```
+bash install_opencv4.0.0_Nano.sh $HOME/.local 
+wget https://raw.githubusercontent.com/AastaNV/JEP/master/script/install_opencv4.0.0_Nano.sh 
+mkdir opencv 
+git clone https://github.com/AastaNV/JEP.git 
+cd JEP/script/ 
 ./install_opencv4.1.1_Jetson.sh ~/opencv  [Takes some time (4h)] 
+```
+Add to the ```.bashrc``` file the following: \
+``` export PYTHONPATH=$PYTHONPATH:/<where-you-place-jep-folder>/JEP/script/opencv-4.1.1/release/python_loader/ ```
 
 ### Install Open3D (Manipulate 3D Data)
-git clone https://github.com/intel-isl/Open3D.git \
-util/scripts/install-deps-ubuntu.sh \
-mkdir build \
-cd build \
-cmake .. \
-sudo make -j4 \
+```
+git clone https://github.com/intel-isl/Open3D.git 
+util/scripts/install-deps-ubuntu.sh 
+mkdir build 
+cd build 
+cmake .. 
+sudo make -j4 
 sudo make install-pip-package (wheel)
+```
 
 ### Install Python wrapper for realsense (pyrealsense2)
 ```
@@ -90,13 +100,18 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc file)
 ```
 
 ### Install keyboard library
-sudo pip3 install keyboard
+```sudo pip3 install keyboard```
 
 ### Install PyThorch(Version 1.0.0) and Torchvision
-# ACRESCENTAR TORCHVISION
 ```
 wget https://nvidia.box.com/shared/static/2ls48wc6h0kp1e58fjk21zast96lpt70.whl -O torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl 
 sudo pip3 install numpy torch-1.0.0a0+bb15580-cp36-cp36m-linux_aarch64.whl
+
+cd /usr/local/lib/python3.6/site-packages or /<virtual-env-dir>/lib/python3.6/site-packages
+git clone https://github.com/pytorch/vision
+cd vision
+sudo python3 setup.py install
+cd ~
 ```
 
 ### Install Terminator (Terminal with less consuming memory - RAM)
@@ -110,7 +125,7 @@ sudo apt-get install ninja-build
 python3 setup.py install
 ```
 Add the following lines to the ``` .bashrc ```file \
-My ninja directory is ``` \usr\bin\ninja ``` and cuda directory is ``` \usr\local\cuda ``` but it can depend.
+My ninja directory is ``` \usr\bin\ninja ``` and cuda directory is ``` \usr\local\cuda-10.0 ``` but it can depend.
 ```
 export PATH=<your-ninja-directory>:${PATH}
 export CUDA_HOME=<your-cuda-directory>
@@ -127,3 +142,5 @@ bash build.sh
 bash download.sh 
 ```
 
+### Install Matplotlib
+``` sudo apt-get install python3-matplotlib ```
