@@ -146,10 +146,20 @@ bash download.sh
 ``` sudo apt-get install python3-matplotlib ```
 
 ### Install Fully Convolutional (optional) HarDNet for Segmentation (Pytorch)
+dependencies:
 ``` 
 pip3 install pydensecrf
 pip3 install protobuf
 pip3 install tensorboardX
+pip3 install imageio
+```
+Download data for desired dataset.
+Download repository: ```git clone https://github.com/PingoLH/FCHarDNet```
+Create setup file: ```gedit config.yaml```
+Extract the zip and modify the path in the ```config.yaml``` file
+To train the model:
+```
+python3 train.py --config [config.yaml]
 ```
 
 ### Install i3 (optional) - lightweight graphic interface (Faster)
@@ -157,11 +167,11 @@ pip3 install tensorboardX
 sudo apt install i3 
 sudo reboot
 ```
-select option in the login screen - ``` i3 ```
+select option in the login screen - ``` i3 ``` \
 shortcuts:
 ```
- windowns + Shift + q -> close application
- windowns + enter -> open terminal
- windowns + d -> menu de pesquisa
+windowns + Shift + q -> close selected application
+windowns + Enter -> open new terminal
+windowns + d -> open search menu
 ```
     
