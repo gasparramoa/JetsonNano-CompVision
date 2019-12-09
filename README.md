@@ -136,7 +136,7 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
 ```
 git clone https://github.com/fxia22/pointnet.pytorch.git
 cd pointnet.pytorch
-pip install -e .
+pip3 install -e .
 cd script
 bash build.sh
 bash download.sh 
@@ -144,3 +144,24 @@ bash download.sh
 
 ### Install Matplotlib
 ``` sudo apt-get install python3-matplotlib ```
+
+### Install Fully Convolutional (optional) HarDNet for Segmentation (Pytorch)
+``` 
+pip3 install pydensecrf
+pip3 install protobuf
+pip3 install tensorboardX
+```
+
+### Install i3 (optional) - lightweight graphic interface (Faster)
+``` 
+sudo apt install i3 
+sudo reboot
+```
+select option in the login screen - ``` i3 ```
+shortcuts:
+```
+ windowns + Shift + q -> close application
+ windowns + enter -> open terminal
+ windowns + d -> menu de pesquisa
+```
+    
