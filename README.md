@@ -146,17 +146,17 @@ bash download.sh
 ``` sudo apt-get install python3-matplotlib ```
 
 ### Install Fully Convolutional (optional) HarDNet for Segmentation (Pytorch)
-dependencies:
+Dependencies:
 ``` 
 pip3 install pydensecrf
 pip3 install protobuf
 pip3 install tensorboardX
 pip3 install imageio
 ```
-Download data for desired dataset.
-Download repository: ```git clone https://github.com/PingoLH/FCHarDNet```
-Create setup file: ```gedit config.yaml```
-Extract the zip and modify the path in the ```config.yaml``` file
+Download data for desired dataset. \
+Download repository: ```git clone https://github.com/PingoLH/FCHarDNet``` \
+Create setup file: ```gedit config.yaml``` \
+Extract the zip and modify the path in the ```config.yaml``` file. \
 To train the model:
 ```
 python3 train.py --config [config.yaml]
@@ -167,11 +167,17 @@ python3 train.py --config [config.yaml]
 sudo apt install i3 
 sudo reboot
 ```
-select option in the login screen - ``` i3 ``` \
-shortcuts:
+Select option in the login screen - ``` i3 ``` \
+Shortcuts:
 ```
 windowns + Shift + q -> close selected application
 windowns + Enter -> open new terminal
 windowns + d -> open search menu
+windowns + (number of workspace 0-9) -> change workspace 
+windowns + shift + (nº of workspace) -> move/send to workspace
+windowns + f -> fullscreen current aplication
 ```
-    
+Configuration file to create new shortcuts:
+```
+home/<your-user>/.config/i3/config
+```    
