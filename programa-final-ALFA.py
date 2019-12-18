@@ -30,9 +30,7 @@ from pointnet.model import PointNetCls
 from torch.autograd import Variable
 from matplotlib import pyplot as plt
 
-from ptsemseg.models import get_model
-from ptsemseg.loader import get_loader
-from ptsemseg.utils import convert_state_dict
+
 
 
 # Declare RealSense pipeline, encapsulating the actual device and sensors.
