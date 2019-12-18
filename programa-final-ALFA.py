@@ -57,7 +57,8 @@ def inicializar_pointnet():
     global classifier
     classifier = PointNetCls(k=2) #IMP, 2 é o número de classes, depois alterar.
     classifier.cuda()
-    classifier.load_state_dict(torch.load('/home/socialab/FCHarDNet/cls_model_40.pth'))
+    #classifier.load_state_dict(torch.load('/home/socialab/FCHarDNet/cls_model_40.pth'))
+    classifier.load_state_dict(torch.load('/home/socialab/human_vision/pointnet.pytorch/utils/cls_20_Nov/cls_model_40.pth'))
     classifier.eval()
     end = time.time()
     print("  (time): " + str(end-start))
