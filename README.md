@@ -64,12 +64,11 @@ sudo apt install htop
 
 ### Install OpenCV
 ```
-bash install_opencv4.0.0_Nano.sh $HOME/.local 
-wget https://raw.githubusercontent.com/AastaNV/JEP/master/script/install_opencv4.0.0_Nano.sh 
+wget https://raw.githubusercontent.com/AastaNV/JEP/master/script/install_opencv4.1.1_Jetson.sh 
 mkdir opencv 
 git clone https://github.com/AastaNV/JEP.git 
 cd JEP/script/ 
-./install_opencv4.1.1_Jetson.sh ~/opencv  [Takes some time (4h)] 
+./install_opencv4.1.1_Jetson.sh ~/opencv  [Takes some time (2h-4h), depends of power source and cooler] 
 ```
 Add to the ```.bashrc``` file the following: \
 ``` export PYTHONPATH=$PYTHONPATH:/<where-you-place-jep-folder>/JEP/script/opencv-4.1.1/release/python_loader/ ```
