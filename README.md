@@ -119,6 +119,11 @@ sudo python3 setup.py install
 cd ~
 ```
 
+add to the ```bashrc file``` the following:
+``` export CUDADIR=/usr/local/cuda-10.0
+export PATH=$PATH:/usr/local/cuda-10.0/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64```
+
 ### Install Terminator (Terminal with less consuming memory - RAM)
 ```
 sudo apt install terminator
