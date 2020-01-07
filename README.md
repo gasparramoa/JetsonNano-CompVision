@@ -134,7 +134,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
 sudo apt install terminator
 ```
 
-### Install Context Encoding (optional) for Semantic Segmentation (PyTorch)
+### Install Context Encoding (optional) for Semantic Segmentation (PyTorch) - NOT WORKING
 ```
 sudo apt-get install ninja-build
 python3 setup.py install
@@ -152,7 +152,7 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}
 git clone https://github.com/fxia22/pointnet.pytorch.git
 cd pointnet.pytorch
 pip3 install -e .
-cd script
+cd scripts
 bash build.sh
 bash download.sh 
 ```
