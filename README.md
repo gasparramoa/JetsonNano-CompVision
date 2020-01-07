@@ -191,7 +191,7 @@ windowns + d -> open search menu
 windowns + (number of workspace 0-9) -> change workspace 
 windowns + shift + (nº of workspace) -> move/send to workspace
 windowns + f -> fullscreen current aplication
-windowns + r -> resize selected windowns -> Use arrows to resize and "Esc" to leave the resize mode
+windowns + r -> resize selected windown -> Use arrows to resize and "Esc" to leave the resize mode
 ```
 Configuration file to create new shortcuts:
 ```
