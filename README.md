@@ -72,6 +72,7 @@ cd JEP/script/
 ```
 Add to the ```.bashrc``` file the following: \
 ``` export PYTHONPATH=$PYTHONPATH:/<where-you-place-jep-folder>/JEP/script/opencv-4.1.1/release/python_loader/ ```
+``` import opencv``` should work in python
 
 ### Install Open3D (Manipulate 3D Data)
 ```
@@ -83,6 +84,8 @@ cmake ..
 sudo make -j4 
 sudo make install-pip-package (wheel)
 ```
+``` import open3d``` should work in python
+
 
 ### Install Python wrapper for realsense (pyrealsense2)
 ```
@@ -97,6 +100,7 @@ make -j4
 sudo make install 
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc file)
 ```
+``` import pyrealsense2``` should work in python
 
 ### Install keyboard library
 ```sudo pip3 install keyboard```
