@@ -71,7 +71,7 @@ cd JEP/script/
 ./install_opencv4.1.1_Jetson.sh ~/opencv  [Takes some time (2h-4h), depends of power source and cooler] 
 ```
 Add to the ```.bashrc``` file the following: \
-``` export PYTHONPATH=$PYTHONPATH:/<where-you-place-jep-folder>/JEP/script/opencv-4.1.1/release/python_loader/ ```
+``` export PYTHONPATH=$PYTHONPATH:/<where-you-place-jep-folder>/JEP/script/opencv-4.1.1/release/python_loader/ ``` \
 ``` import opencv``` should work in python
 
 ### Install Open3D (Manipulate 3D Data)
@@ -103,7 +103,9 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib (or place it in the ./bashrc file)
 ``` import pyrealsense2``` should work in python
 
 ### Install keyboard library
-```sudo pip3 install keyboard```
+```sudo pip3 install keyboard``` \
+```import keyboard``` should work in python
+
 
 ### Install PyThorch(Version 1.0.0) and Torchvision
 ```
