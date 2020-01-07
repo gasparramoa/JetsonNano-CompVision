@@ -116,7 +116,10 @@ cd /usr/local/lib/python3.6/site-packages or /<virtual-env-dir>/lib/python3.6/si
 git clone https://github.com/pytorch/vision
 cd vision
 sudo python3 setup.py install
-cd ~
+```
+or
+```
+sudo pip3 install torchvision
 ```
 
 add to the ```bashrc file``` the following:
