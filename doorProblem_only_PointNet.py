@@ -79,6 +79,8 @@ def filtrar_segmentacao(imagemDepth2):
     #a_imageDEPTH = np.asarray(imageDepth)
     a_imageDEPTH2 = np.asarray(imageDepth2)
 
+    #print(a_imageDEPTH2)
+
     #o3d_RGB = o3d.geometry.Image(a_imageRGB)
     #o3d_Depth = o3d.geometry.Image(a_imageDEPTH)
     o3d_Depth2 = o3d.geometry.Image(a_imageDEPTH2)
@@ -89,7 +91,6 @@ def filtrar_segmentacao(imagemDepth2):
         #rgbd_image,
         #o3d.camera.PinholeCameraIntrinsic(
             #o3d.camera.PinholeCameraIntrinsicParameters.PrimeSenseDefault))
-
 
 
     pcd2 = o3d.geometry.PointCloud.create_from_depth_image(
@@ -116,7 +117,7 @@ def filtrar_segmentacao(imagemDepth2):
     #print(np.asarray(pcd2.points).shape) 
     
     end = time.time()
-    print("[Filtering Image] time: " + str(end-start))
+    print("[Depth to pointcloud time]: " + str(end-start))
 
     start = time.time()
     pointnet(np.asarray(pcd2.points))
@@ -161,82 +162,52 @@ def main_program():
 
     inicializar_pointnet()
     
+    #for i in range(12):
+
     while True:
-        a = input("\n ** Predict [Open/Closed] (ENTER):")
+        a = input("\n[>> Predict [Open/Closed] (ENTER):")
 
         program_time = time.time()
-        
-        initial_time = time.time()
-        frames = pipe.wait_for_frames()
-        end_time = time.time()
-        print("Operation 1: " + str(end_time-initial_time))
-  
-        
-        initial_time = time.time()
 
+        frames = pipe.wait_for_frames()
+        
+        # Big problem in using depth and RGB information
         # Align the depth frame to color frame
         #aligned_frames = align.process(frames)
-
-        end_time = time.time()
-        print("Operation 2: " + str(end_time-initial_time))
-
-
-        
+      
         #ThresHOLD!!
         threshold_depth = threshold.process(frames.get_depth_frame())
-
-
-        initial_time = time.time()
 
         # Get aligned frames
         #aligned_depth_frame = aligned_frames.get_depth_frame() 
         # aligned_depth_frame is a 640x480 depth image
         #color_frame = aligned_frames.get_color_frame()
 
-        end_time = time.time()
-        print("Operation 3: " + str(end_time-initial_time))
-
-
         #if not aligned_depth_frame or not color_frame:
             #continue
 
 
-        initial_time = time.time()
         # Images RGB and Depth
         #depth_image = np.asanyarray(aligned_depth_frame.get_data())
         #color_image = np.asanyarray(color_frame.get_data())
-
         depth_image2 = np.asanyarray(threshold_depth.get_data())
 
         #depth_image = cv2.cvtColor(depth_image, cv2.COLOR_BGR2RGB)
         #color_image = cv2.cvtColor(color_image, cv2.COLOR_BGR2RGB)
-        end_time = time.time()
-        print("Operation 4: " + str(end_time-initial_time))
 
-        initial_time = time.time()
 
         #image_color = Image.fromarray(color_image)
         #image_depth = Image.fromarray(depth_image)
-
         image_depth_2 =Image.fromarray(depth_image2)
-
-
 
         #image_color2 = image_color.rotate(270, expand=True)
         #image_depth2 = image_depth.rotate(270, expand=True)
-
         image_depth_22 = image_depth_2.rotate(270, expand=True)   
 
         #image_color2 = np.asarray(image_color2)
 
-        end_time = time.time()
-        print("Operation 5: " + str(end_time-initial_time))
-  
-
-
-
         end = time.time()
-        print("Realsense time: " + str(end-program_time))      
+        print("Realsense time (Get depth frames, rotate image)\n: " + str(end-program_time))      
 
 
         #FILTRAR IMAGEM COM SEGMENTAÇÃO.
@@ -244,6 +215,7 @@ def main_program():
         filtrar_segmentacao(image_depth_22)
 
         program_time_end = time.time()
+        total_program_time = program_time_end-program_time
         print("Total time Program: "+str(program_time_end-program_time) + " sec\n\n")
 
 
