@@ -1,0 +1,5 @@
+2019-12-10 12:30:39,628 INFO Let the games begin
+2019-12-10 12:30:39,644 INFO Using No Augmentations
+2019-12-10 12:30:44,480 INFO Using sgd optimizer
+2019-12-10 12:30:44,485 INFO Using cross_entropy with {} params
+2019-12-10 12:30:44,486 INFO No checkpoint found at 'None'
