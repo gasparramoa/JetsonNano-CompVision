@@ -157,8 +157,11 @@ bash build.sh
 bash download.sh 
 ```
 
-### Install Matplotlib
-``` sudo apt-get install python3-matplotlib ```
+### Install other usefull libraries:
+``` 
+sudo apt-get install python3-matplotlib 
+sudo pip3 install scipy
+```
 
 ### Install Fully Convolutional (optional) HarDNet for Segmentation (Pytorch)
 Dependencies:
