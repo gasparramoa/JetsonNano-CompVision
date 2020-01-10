@@ -200,3 +200,13 @@ Configuration file to create new shortcuts:
 ```
 home/<your-user>/.config/i3/config
 ```    
+
+## Speed up the Start up in Jetson Nano
+
+### remove uncessary startup programs
+
+### enable auto login in i3 ubuntu
+```
+sudo gedit /etc/gdm3/custom.conf
+```
+uncomment the two lines below ``` # Enabling automatic login ```
