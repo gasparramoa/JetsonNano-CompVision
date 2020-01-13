@@ -210,3 +210,21 @@ home/<your-user>/.config/i3/config
 sudo gedit /etc/gdm3/custom.conf
 ```
 uncomment the two lines below ``` # Enabling automatic login ```
+
+
+## Start python-script after boot
+Add the following to the ``` ~/.bashrc ``` file:
+```
+echo Running python script
+python3 your_python_script.py
+```
+What is left is to open the terminal after boot to run the script.
+```
+cd ~/.config/i3
+```
+add the following to the ```config``` file:
+```
+for_window [class="Terminal"] move container to workspace 1
+exec --no-startup-id i3-sensible-terminal
+```
+
