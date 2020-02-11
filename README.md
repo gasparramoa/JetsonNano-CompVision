@@ -237,8 +237,8 @@ The installation of DIGITS must be made by source because the POP!_OS_! system i
 Follow these instructions: https://github.com/NVIDIA/DIGITS/blob/digits-6.0/docs/BuildDigits.md \
 The command ``` ./digits-devserver ``` may not work, because of the flask_socketio package. \
 Remove the flask_socketio package from the requeriments.txt inside digits folder. \
-Install the last version by doint ``` pip install flask_socketio ``` \
-Them you might have another error, to solve upgrade the werkzeug library, ``` pip install --upgrade werkzeug==0.16.1 ```
-
-
+Install the last version by doing: ``` pip install flask_socketio ``` .\
+Them you might have another error, to solve upgrade the werkzeug library, ``` pip install --upgrade werkzeug==0.16.1 ``` \
+\
+To start the server simply use the command: ``` ./digits-devserver ```
 
