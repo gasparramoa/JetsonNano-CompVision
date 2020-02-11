@@ -228,3 +228,17 @@ for_window [class="Terminal"] move container to workspace 1
 exec --no-startup-id i3-sensible-terminal
 ```
 
+
+
+# Configuration - Computer for training (PoP!_OS 19.10)
+
+## Install DIGITS for jetson-inference
+The installation of DIGITS must be made by source because the POP!_OS_! system is incompatible with the nvidia docker.
+Follow these instructions: https://github.com/NVIDIA/DIGITS/blob/digits-6.0/docs/BuildDigits.md
+The command ``` ./digits-devserver ``` may not work, because of the flask_socketio package.
+Remove the flask_socketio package from the requeriments.txt inside digits folder.
+Install the last version by doint ``` pip install flask_socketio ```
+Them you might have another error, to solve upgrade the werkzeug library, ``` pip install --upgrade werkzeug==0.16.1 ```
+
+
+
