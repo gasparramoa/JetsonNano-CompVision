@@ -240,5 +240,7 @@ Remove the flask_socketio package from the requeriments.txt inside digits folder
 Install the last version by doing: ``` pip install flask_socketio ``` .\
 Them you might have another error, to solve upgrade the werkzeug library, ``` pip install --upgrade werkzeug==0.16.1 ``` \
 \
-To start the server simply use the command: ``` ./digits-devserver ```
+To start the server simply use the command: ``` ./digits-devserver ``` \
+
+In case of error in detection models, just do: ``` sudo pip install --user --upgrade protobuf==3.1.0.post1 ```
 
