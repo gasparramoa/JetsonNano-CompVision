@@ -51,8 +51,11 @@ threshold.set_option(rs.option.max_distance, 10)
 # Stereo Audio:
 # get timesteps for each sample, T is note duration in seconds
 sample_rate = 44100
-T = 0.2272753623188406
-t = np.linspace(0, T, T * sample_rate, False)
+#T = 0.2272753623188406
+T = 0.227275362
+valor = sample_rate * T
+t = np.linspace(0, T, int(valor), False)
+
 
 
 
@@ -90,7 +93,7 @@ def stereo_beep(left, right):
     # wait for playback to finish before exiting
     #play_obj.wait_done()
 
-    wave_read = wave.open("/home/socialab/JetsonNano-CompVision/beep1_stereo.wav", 'rb')
+    wave_read = wave.open("/home/socialab/JetsonNano-CompVision/sounds/beep1_stereo.wav", 'rb')
     audio_data = wave_read.readframes(wave_read.getnframes())
 
     data = np.fromstring(audio_data, dtype=np.uint16)
@@ -112,11 +115,7 @@ def stereo_beep(left, right):
     play_obj = sa.play_buffer(data.tostring(), 2, bytes_per_sample, sample_rate)
     play_obj.wait_done()
 
-    '''
-    wave_obj = sa.WaveObject.from_wave_file("/home/socialab/JetsonNano-CompVision/beep1.wav")
-    play_obj = wave_obj.play()
-    play_obj.wait_done()
-    '''
+
 
 
 def speak(text):
