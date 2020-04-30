@@ -253,12 +253,13 @@ First use command ``` df -h ``` to see the available devices. \
 Plug the SDCard in your computer and use the command ``` df -h ``` again. \
 Now you should see a new line and that's your SDCard, normally it looks like ``` /dev/mmcblk0p1 ```\
 Use ``` sudo dd if=/dev/mmcblk0 of=~/SDCardBackupJetpack43.img ``` \
-This previous command will save the current image (jetpack4.3) of tour SDCard in ``` /SDCardBackupJetpack43.img ```
+This previous command will save the current image (jetpack4.3) of tour SDCard in ``` /SDCardBackupJetpack43.img ``` \
+It will take some time (around 20~30 minutes).
 
 ### Format SDCard
 For formating the SDCard use ``` gparted ``` and remove all the partitions and format in ``` fat32 ```
 
 ### Download Jetpack4.4 image
-What's left to do is to download the image from: ```https://developer.nvidia.com/embedded/jetpack-archive``` \
-And follow the Jetson Nano instructions: ```https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write ```
+What's left to do is to download the image from: https://developer.nvidia.com/embedded/jetpack-archive\
+And follow the Jetson Nano instructions: https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write 
 
