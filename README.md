@@ -1,8 +1,6 @@
 # JetsonNano-CompVision
 Simple guideline for installing all the main computer vision libraries in the SBC Jetson Nano
 
-https://we.tl/t-RZW0o5nfdX
-
 ## Recommended Requesites in JetsonNano
 At least a 32 GB SD-Card (I'm using a 64 GB)\
 USB fan to reduce CPU Tempeature to avoid CPU throttle.
